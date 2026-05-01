@@ -29,5 +29,6 @@ jobs:
           xcodebuild test \
           -scheme MovieMosaic \
           -sdk iphonesimulator \
+          -parallel-testing-enabled NO \
           -destination 'platform=iOS Simulator,name=iPhone 17' \
           -resultBundlePath TestResults.xcresult
