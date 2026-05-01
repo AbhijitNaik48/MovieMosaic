@@ -1,0 +1,29 @@
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+*.xcuserdatad
+*.xccheckout
+
+# Xcode workspace settings (user-specific)
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Swift Package Manager
+.swiftpm/
+Packages/
+
+# CocoaPods (only if you are NOT committing Pods)
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Archives
+*.xcarchive
+
+#Github Runner
+actions-runner/
+
+# OS junk
+.DS_Store
