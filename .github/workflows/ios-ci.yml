@@ -1,4 +1,4 @@
-name: iOS CI - Unit Tests
+name: iOS CI - Tests
 
 on:
   push:
@@ -7,7 +7,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test:
+  unit_tests:
+    name: Run Unit Tests
     runs-on: self-hosted
 
     steps:
@@ -15,15 +16,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2. Show Xcode version (debug step)
+      # 2. Show Xcode version
       - name: Show Xcode Version
         run: xcodebuild -version
 
-      # 3. List schemes (important for debugging)
+      # 3. List schemes
       - name: List Schemes
         run: xcodebuild -list
 
-      # 4. Build + Run Unit Tests
+      # 4. Run Unit Tests
       - name: Run Unit Tests
         run: |
           xcodebuild test \
@@ -31,4 +32,35 @@ jobs:
           -sdk iphonesimulator \
           -parallel-testing-enabled NO \
           -destination 'platform=iOS Simulator,name=iPhone 17' \
-          -resultBundlePath TestResults.xcresult
+          -resultBundlePath UnitTests.xcresult \
+          -only-testing:MovieMosaicTests
+
+
+  ui_tests:
+    name: Run UI Tests
+    runs-on: self-hosted
+    needs: unit_tests
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. Show Xcode version
+      - name: Show Xcode Version
+        run: xcodebuild -version
+
+      # 3. List schemes
+      - name: List Schemes
+        run: xcodebuild -list
+
+      # 4. Run UI Tests
+      - name: Run UI Tests
+        run: |
+          xcodebuild test \
+          -scheme MovieMosaic \
+          -sdk iphonesimulator \
+          -parallel-testing-enabled NO \
+          -destination 'platform=iOS Simulator,name=iPhone 17' \
+          -resultBundlePath UITests.xcresult \
+          -only-testing:MovieMosaicUITests
