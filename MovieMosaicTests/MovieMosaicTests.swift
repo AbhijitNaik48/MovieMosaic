@@ -2,7 +2,7 @@
 //  MovieMosaicTests.swift
 //  MovieMosaicTests
 //
-//  Created by ABHIJIT NAIK on 01/05/26.
+//  Created by Harish Kshirsagar on 25/02/25.
 //
 
 import XCTest
@@ -24,8 +24,6 @@ final class MovieMosaicTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
     }
 
     func testPerformanceExample() throws {

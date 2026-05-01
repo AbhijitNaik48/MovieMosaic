@@ -2,7 +2,7 @@
 //  MovieMosaicUITestsLaunchTests.swift
 //  MovieMosaicUITests
 //
-//  Created by ABHIJIT NAIK on 01/05/26.
+//  Created by Harish Kshirsagar on 25/02/25.
 //
 
 import XCTest
@@ -24,8 +24,6 @@ final class MovieMosaicUITestsLaunchTests: XCTestCase {
 
         // Insert steps here to perform after app launch but before taking a screenshot,
         // such as logging into a test account or navigating somewhere in the app
-        // XCUIAutomation Documentation
-        // https://developer.apple.com/documentation/xcuiautomation
 
         let attachment = XCTAttachment(screenshot: app.screenshot())
         attachment.name = "Launch Screen"

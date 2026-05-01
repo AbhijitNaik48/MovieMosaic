@@ -2,7 +2,7 @@
 //  MovieMosaicUITests.swift
 //  MovieMosaicUITests
 //
-//  Created by ABHIJIT NAIK on 01/05/26.
+//  Created by Harish Kshirsagar on 25/02/25.
 //
 
 import XCTest
@@ -29,15 +29,15 @@ final class MovieMosaicUITests: XCTestCase {
         app.launch()
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // XCUIAutomation Documentation
-        // https://developer.apple.com/documentation/xcuiautomation
     }
 
     @MainActor
     func testLaunchPerformance() throws {
-        // This measures how long it takes to launch your application.
-        measure(metrics: [XCTApplicationLaunchMetric()]) {
-            XCUIApplication().launch()
+        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
+            // This measures how long it takes to launch your application.
+            measure(metrics: [XCTApplicationLaunchMetric()]) {
+                XCUIApplication().launch()
+            }
         }
     }
 }

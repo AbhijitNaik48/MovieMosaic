@@ -2,7 +2,7 @@
 //  MovieMosaicApp.swift
 //  MovieMosaic
 //
-//  Created by ABHIJIT NAIK on 01/05/26.
+//  Created by Harish Kshirsagar on 25/02/25.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct MovieMosaicApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
         }
     }
 }
