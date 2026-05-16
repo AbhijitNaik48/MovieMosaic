@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// this View is used to show movie details
 struct MovieDetailView: View {
 
     @StateObject private var viewModel: MovieDetailViewModel = MovieDetailViewModel()
